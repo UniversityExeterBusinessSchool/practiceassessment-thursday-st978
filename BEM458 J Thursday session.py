@@ -1,9 +1,9 @@
 #######################################################################################################################################################
 # 
-# Name:
-# SID:
-# Exam Date:
-# Module:
+# Name: Shraddha Thakre
+# SID: 740100657
+# Exam Date: 27-03-2025
+# Module: BEMM458 Programming in Business analytics
 # Github link for this assignment:  
 #
 # ######################################################################################################################################################
@@ -50,7 +50,38 @@ key_comments = {
 # Write your search code here and provide comments. 
 
 # Initialize an empty list to store (start, end) positions
-my_list = []
+
+#list of words 
+key_comments = {
+    0: 'satisfactory',
+    1: 'order',
+    2: 'effort',
+    3: 'issues',
+    4: 'promptly',
+    5: 'appreciate',
+    6: 'experience',
+    7: 'resolve',
+    8: 'overall',
+    9: 'minor'
+}
+#initailized of empty list to store (start,end ) positions 
+my_list[]
+
+my_key[7,7]
+#my student id starts with 7 and ends with 7 
+
+#loop through assign keys 
+for key in my_key:
+    word=key_comments[key]
+    start=customer_feedback.find(word)
+    
+#if word is found find end index and appendex 
+    if start != -1:
+        end=start len(word)
+        my_list.append((start,end))
+        
+print(my_list)
+        
 
 ##########################################################################################################################################################
 
@@ -71,6 +102,41 @@ my_list = []
 # Write your code for Average Order Value
 
 # Call your designed functions here
+# write your code 
+
+# Insert your SID digits here
+first_two_digits = 74  #  first two digits
+last_two_digits = 57   #  last two digits
+
+# Sample values derived from your SID digits for demonstration
+operating_profit = first_two_digits * 3000     
+revenue = last_two_digits * 2000                
+total_revenue = first_two_digits * 5000        
+total_customers = last_two_digits + 100       
+lost_customers = last_two_digits // 2          
+number_of_orders = first_two_digits + 20        
+
+#function 1: Operating profit :
+def operating_profit_margin(profit,revenue):
+    return(profit/revenue)*100
+
+#function 2: Revenue per Customer:
+def revenue_per_customer(total_revenue, total_customers):
+    return (total_revenue / total_customers)
+
+# Function 3: Customer Churn Rate
+def customer_churn_rate(lost_customers, total_customers):
+    return (lost_customers / total_customers) * 100
+
+# Function 4: Average Order Value
+def average_order_value(total_revenue, number_of_orders):
+    return (total_revenue / number_of_orders)
+
+print("operating profit margin:", operating_profit_margin(operating_profit, revenue))
+print("Revenue per Customer:", revenue_per_customer(total_revenue, total_customers))
+print("Customer Churn Rate:", customer_churn_rate(lost_customers, total_customers))
+print("Average Order Value:", average_order_value(total_revenue, number_of_orders))
+
 
 ##########################################################################################################################################################
 
@@ -98,6 +164,34 @@ Price (£)    Demand (Units)
 
 # Write your code here
 
+#importing the libraries
+import numpy as np 
+import matplotlib.pyplot as plt 
+from sklearn.linear_model import LinearRegression
+
+price = np.array([20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70]).reshape(-1, 1)
+demand = np.array([300, 280, 260, 240, 210, 190, 160, 140, 120, 100, 85])
+
+
+#applying linear regreession model 
+model=LinearRegression()
+model.fit(price,demand)
+
+#predecting demand at price  £52
+price_52=np.array([[52]])
+predicted_demand = model.predict(prices.reshape(-1, 1))
+revenue= price*predicted_demand
+
+#finding price that maximizes the revenue 
+max_revenue_index=np.argmax(revenue)
+optimal_price=prices[max_revenue_index]
+max_revenue= revenue[max_revenue_index]
+
+print("Demand at 52 pounds:", round(predicted_demand_52[0]))
+print("optimal price for maximum revenue:", optimal_price )
+print("maximum revenue:",round(max_revenue))
+
+
 ##########################################################################################################################################################
 
 # Question 4 - Debugging; Plotting and data visualization chart
@@ -117,6 +211,18 @@ plt.ylabel="Random Number"
 plt.legend('---')
 plt.grid(True)
 plt.show()
+
+#write your code here 
+# solution
+import ramdom
+import matplotlib.pyplot as plt 
+# generating 100 random numbers between 1 and 740100657(student id number)
+max_value=int(input("Enter student id number:"))
+random_numbers=[random.randint(1, max_value )for i in range (100) ]
+print(random_numbers)
+
+#student id number: 740100657
+
 
 
 
